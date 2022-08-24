@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #a2a8d6;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 75px;
+}
+
+/* NAV */
+
+.navbar{
+    background-color: #30376f;
+}
+
+.nav-item{
+    font-size: 20px;
+}
+
+/* IMGS */
+
+.imgindex{
+    height: 700px;
+}
+
+.imgmiembros{
+    height: 320px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #524f4f;
+}
+
+
+
+/* CARDS */
+
+.card-body{
+    box-shadow: 2px 2px 4px #000000;
+}
+
+/* TIPOGRAFIA titulo y subtitulo*/
+
+.pIndex{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+li{
+    list-style: none;
+}
+
+h1{
+    font-family: 'Cormorant SC', serif;
+    font-size: 45px;
+    color: #30376f;
+}
+
+.subtitle{
+    color: #30376f;
+}
+
+.card-title{
+    color: #30376f;
+    font-family: 'Cormorant SC', serif;
+}
+
+/* iframe */
+
+iframe{
+    border-radius: 5px;
+}
+
+
+
+/* FOOTER */
+
+.footer{
+    background-color: #30376f;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+ 
+}
+
+
+
+
+
+
+/* MEDIAS para poner en columna el nav y separar las cards*/
+
+
+@media only screen and (max-device-width: 768px){
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .card{
+        margin: 5px 0;
+    }
+
+}
