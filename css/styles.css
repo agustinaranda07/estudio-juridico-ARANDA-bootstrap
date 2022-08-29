@@ -105,21 +105,6 @@ iframe:hover{
 
 
 
-/* MEDIAS para poner en columna el nav y separar las cards cuando estan en columnas*/
-
-
-@media only screen and (max-device-width: 768px){
-    .navbar{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 5px 0 5px 0;
-    }
-    .card{
-        margin: 5px 0;
-    }
-
-}
 
 /* animaciones de las img de seccion equipo*/
 
@@ -167,3 +152,20 @@ iframe:hover{
 .roll-in-blurred-right{animation:roll-in-blurred-right .65s cubic-bezier(.23,1.000,.32,1.000) both}
 
 @keyframes roll-in-blurred-right{0%{transform:translateX(1000px) rotate(720deg);filter:blur(50px);opacity:0}100%{transform:translateX(0) rotate(0deg);filter:blur(0);opacity:1}}
+
+
+/* MEDIAS para poner en columna el nav y separar las cards cuando estan en columnas*/
+
+
+@media only screen and (max-device-width: 768px){
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px 0 5px 0;
+    }
+    .card{
+        margin: 5px 0;
+    }
+
+}
