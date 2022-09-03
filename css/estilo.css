@@ -28,8 +28,7 @@ body {
   background-color: #30376f;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  background: linear-gradient(90deg, #a2a8d6, #30376f); }
+  width: 100%; }
 
 /* MEDIAS para poner en columna el nav y separar las cards cuando estan en columnas*/
 @media only screen and (max-device-width: 768px) {
