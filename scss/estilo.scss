@@ -1,23 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /*variables*/
-$color-titulo-background:#30376f;
+$color-background:#30376f;
+$tipografia-primaria: 'Cormorant SC', serif;
+$tipografia-secundaria: 'Roboto', sans-serif;
+
+/*MAP para los iconos de seccion equipo*/
+$social:(
+    facebook: rgb(138, 138, 211),
+    whatsapp: rgb(112, 167, 112),
+    instagram: rgb(206, 136, 147)
+);
+
+@each $socialmedia, $color in $social {
+    .fa-#{$socialmedia}{
+        background-color: $color;
+    }   
+};
+
+.fa-brands{
+    padding: 17px 3px 17px 3px;
+    border-radius: 35%;
+};
+
+// MIXIN
+@mixin color-fontFamily($colorFont,$fontFamily){
+    color: $colorFont;
+    font-family: $fontFamily;
+}
+
 
 body{
+    min-height: 120vh;
     background-color: #a2a8d6;
-    min-height: 100vh;
+    border: 2px solid red;
     position: relative;
     padding-bottom: 75px;
 }
 /*NAV*/
 .navbar{
-    background-color: #30376f;
+    background-color: $color-background;
     .nav-item{
         font-size: 20px;
     }
 }
 
-.imgindex{
-    height: 700px;
+/* TIPOGRAFIA titulo y subtitulo*/
+
+.pIndex{
+    font-family: $tipografia-secundaria;
+    font-size: 20px;
 }
+
+
+li{
+    list-style: none;
+}
+
+h1{
+    @include color-fontFamily(#30376f,'Cormorant SC');
+    font-size: 45px;
+}
+
+.subtitle{
+    color: $color-background;
+}
+
+.card-title{
+    @include color-fontFamily(#30376f,'Cormorant SC');
+}
+
 
 /*BODY CARDS*/
 .card-body{
@@ -26,20 +82,101 @@ body{
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     }
     .card-title{
-        color: $color-titulo-background;
-        font-family: 'Cormorant SC', serif;
+        @include color-fontFamily(#30376f,'Cormorant SC');
     }
 }
 
+// IMGS
+.imgindex{
+    height: 650px;
+}
+
+.imgmiembros{
+    height: 320px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #524f4f;
+    animation-name: imgtraslado;
+    animation-duration: 1s;
+    transition: transform 0.3s;
+    &:hover{
+        transform: scale(110%);
+    }
+}
+
+// EXTEND IMGS
+
+.imgmiembro2,.imgmiembro3,.imgmiembro4{
+    @extend .imgmiembros;
+}
+
+/* iframe de ubicacion */
+
+iframe{
+    border-radius: 5px;
+    &:hover{
+        transform: scale(105%);
+    }
+    
+}
 
 
 /*FOOTER*/
 .footer{
-    background-color: $color-titulo-background;
+    background-color: $color-background;
+    width: 100%;
     position: absolute;
     bottom: 0;
-    width: 100%;
 }
+
+
+/* animaciones de las img de seccion equipo*/
+
+@keyframes imgtraslado {
+    0%{
+        transform: translate(500px,0);
+    }
+
+    75%{
+        transform: scale(150%);
+    }
+
+    100%{
+        transform: scale(110%);
+
+    }
+    
+}
+
+
+/* Animaciones seccion trayectoria */
+
+.slide-in-top{-webkit-animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94) both}
+
+@-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+
+.pTrayectoria1{
+    animation-delay: 0.5s;
+}
+.pTrayectoria2{
+    animation-delay: 1s;
+}
+.pTrayectoria3{
+    animation-delay: 1.5s;
+}
+.pTrayectoria4{
+    animation-delay: 2s;
+}
+
+/* Animaciones seccion Areas de practica y contacto */
+
+.roll-in-left{animation:roll-in-left .6s ease-out both}
+
+@keyframes roll-in-left{0%{transform:translateX(-800px) rotate(-540deg);opacity:0}100%{transform:translateX(0) rotate(0deg);opacity:1}}
+
+.roll-in-blurred-right{animation:roll-in-blurred-right .65s cubic-bezier(.23,1.000,.32,1.000) both}
+
+@keyframes roll-in-blurred-right{0%{transform:translateX(1000px) rotate(720deg);filter:blur(50px);opacity:0}100%{transform:translateX(0) rotate(0deg);filter:blur(0);opacity:1}}
 
 /* MEDIAS para poner en columna el nav y separar las cards cuando estan en columnas*/
 @media only screen and (max-device-width: 768px){
@@ -52,6 +189,16 @@ body{
     .card{
         margin: 5px 0;
     }
+    body{
+        position: relative;
+
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 
 }
+
 

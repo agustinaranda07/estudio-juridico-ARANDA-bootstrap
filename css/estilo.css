@@ -1,7 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 /*variables*/
+/*MAP para los iconos de seccion equipo*/
+.fa-facebook {
+  background-color: #8a8ad3; }
+
+.fa-whatsapp {
+  background-color: #70a770; }
+
+.fa-instagram {
+  background-color: #ce8893; }
+
+.fa-brands {
+  padding: 17px 3px 17px 3px;
+  border-radius: 35%; }
+
 body {
+  min-height: 120vh;
   background-color: #a2a8d6;
-  min-height: 100vh;
+  border: 2px solid red;
   position: relative;
   padding-bottom: 75px; }
 
@@ -11,8 +31,25 @@ body {
   .navbar .nav-item {
     font-size: 20px; }
 
-.imgindex {
-  height: 700px; }
+/* TIPOGRAFIA titulo y subtitulo*/
+.pIndex {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px; }
+
+li {
+  list-style: none; }
+
+h1 {
+  color: #30376f;
+  font-family: "Cormorant SC";
+  font-size: 45px; }
+
+.subtitle {
+  color: #30376f; }
+
+.card-title {
+  color: #30376f;
+  font-family: "Cormorant SC"; }
 
 /*BODY CARDS*/
 .card-body {
@@ -21,14 +58,105 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; }
   .card-body .card-title {
     color: #30376f;
-    font-family: 'Cormorant SC', serif; }
+    font-family: "Cormorant SC"; }
+
+.imgindex {
+  height: 650px; }
+
+.imgmiembros, .imgmiembro2, .imgmiembro3, .imgmiembro4 {
+  height: 320px;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #524f4f;
+  animation-name: imgtraslado;
+  animation-duration: 1s;
+  transition: transform 0.3s; }
+  .imgmiembros:hover, .imgmiembro2:hover, .imgmiembro3:hover, .imgmiembro4:hover {
+    transform: scale(110%); }
+
+/* iframe de ubicacion */
+iframe {
+  border-radius: 5px; }
+  iframe:hover {
+    transform: scale(105%); }
 
 /*FOOTER*/
 .footer {
   background-color: #30376f;
+  width: 100%;
   position: absolute;
-  bottom: 0;
-  width: 100%; }
+  bottom: 0; }
+
+/* animaciones de las img de seccion equipo*/
+@keyframes imgtraslado {
+  0% {
+    transform: translate(500px, 0); }
+  75% {
+    transform: scale(150%); }
+  100% {
+    transform: scale(110%); } }
+
+/* Animaciones seccion trayectoria */
+.slide-in-top {
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1; } }
+
+.pTrayectoria1 {
+  animation-delay: 0.5s; }
+
+.pTrayectoria2 {
+  animation-delay: 1s; }
+
+.pTrayectoria3 {
+  animation-delay: 1.5s; }
+
+.pTrayectoria4 {
+  animation-delay: 2s; }
+
+/* Animaciones seccion Areas de practica y contacto */
+.roll-in-left {
+  animation: roll-in-left .6s ease-out both; }
+
+@keyframes roll-in-left {
+  0% {
+    transform: translateX(-800px) rotate(-540deg);
+    opacity: 0; }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1; } }
+
+.roll-in-blurred-right {
+  animation: roll-in-blurred-right 0.65s cubic-bezier(0.23, 1, 0.32, 1) both; }
+
+@keyframes roll-in-blurred-right {
+  0% {
+    transform: translateX(1000px) rotate(720deg);
+    filter: blur(50px);
+    opacity: 0; }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0);
+    opacity: 1; } }
 
 /* MEDIAS para poner en columna el nav y separar las cards cuando estan en columnas*/
 @media only screen and (max-device-width: 768px) {
@@ -38,4 +166,10 @@ body {
     justify-content: center;
     padding: 5px 0 5px 0; }
   .card {
-    margin: 5px 0; } }
+    margin: 5px 0; }
+  body {
+    position: relative; }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; } }
