@@ -1,7 +1,7 @@
 {
   "name": "estudio-juridico-oficial",
   "version": "1.0.0",
-  "description": "",
+  "description": "Estudio juridico de abogados en Virasoro, Corrientes",
   "main": "index.js",
   "scripts":{
     "test": "echo \"Error: no test specified\" && exit 1",
